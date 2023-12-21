@@ -18,7 +18,8 @@
 # == YOUR CODE ==
 
 def is_valid(password):
-  if len(password) > 7 and ('!' in password or '$' in password or '%' in password or '@' in password or '&' in password):
+  special_characters = ['!', '$', '%', '@', '&']
+  if len(password) > 7 and any(char in password for char in special_characters):
     return True
   else:
     return False
